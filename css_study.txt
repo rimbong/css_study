@@ -30,6 +30,9 @@
 	2) box-sizing : content-box 
 	전체 크기가 content-box + border + padding + margin 값이 된다. 즉,	전체 크기 = content-box  + border + padding + margin , 
 	따라서 border , margin , padding은 width,height 값 외로 따로 합산된다. 그러므로 * 지정한 width,height보다 영역이 더 커질수 있다.
+
+	3) :before , :after (앞에 세미콜론 2개가 붙어도 같은 의미)
+	특정 요소의 앞이나 뒤에 지정한 내용을 추가한다. (여기서 앞이나 뒤는 형재요소가 아닌 해당요소의 내부에서 이루어진다.)
 ---------------------------------------------------------------------------
 4. bottom 고정 방법
 <!-- HTML -->
