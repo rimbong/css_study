@@ -79,7 +79,8 @@ input[type=checkbox]+ label:before { content: ""; display: inline-block; width: 
 input[type=checkbox]:checked + label { color: #141313; font-weight: 500;  }
 input[type=checkbox]:checked + label:before { background-position: -143px -67px; } 
 
-label:before - background-position 을 이용해 background 이미지의 '위치'를 지정한다.
+label:before - background-position 을 이용해 background 이미지의 '위치'를 지정한다. 이 위치는 이미지의 크기에서
+background-size로 조절한 크기를 기준으로 이동한다.
 label:before - width, height 값을 적절히 조절해 위치를 잡은 아이콘의 이미지가 잘 보이게끔 한다.
 input[type=checkbox] + label - 이 값의 width 값은 비워놔야 한다. 그래야 커스텀 체크박스 옆 글씨가 옆으로 잘 써질 수 있다.
 ---------------------------------------------------------------------------
