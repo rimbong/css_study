@@ -72,6 +72,19 @@ spinner 같은 로딩 화면을 정중앙에 배치해야 할때
   right: 0;
   margin: auto;
 ---------------------------------------------------------------------------
+가운데,중앙 정렬
+
+1. margin: 0 auto 
+margin을 이용해 중앙 정렬시에는 해당 요소에 width값이 수치적으로 정의 되어있고 display가 inline이 아니어야한다.
+
+2. position 이용
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+상위 요소는 relative로 선언 후 사용한다.
+
+---------------------------------------------------------------------------
 체크박스 커스텀
 input[type=checkbox] { display: none; }
 input[type=checkbox] + label { display: inline-block; cursor: pointer; position: relative;  height: 16px; padding-left: 30px;font-size: 12px; font-weight: 300;color: #acacac;}
@@ -87,6 +100,7 @@ input[type=checkbox] + label - 이 값의 width 값은 비워놔야 한다. 그�
 inline , block , inline block
 inline
 display 속성이 inline으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치됩니다
+참고) margin 값이 적용되지 않습니다.
 
 block
 display 속성이 block으로 지정된 엘리먼트는 전후 줄바꿈이 들어가 다른 엘리먼트들을 다른 줄로 밀어내고 혼자 한 줄을 차지합니다.
@@ -143,6 +157,45 @@ transition은 자동으로 발동되지 않는다. :hover와 같은 가상 클�
 	}
 
 ---------------------------------------------------------------------------
+float ,overflow ,ul 각 속성에서 특이점
+* float : none / left / right ;
+기능1. 이미지 주변에 텍스트를 감싸기 위해 만들어진 프로퍼티
+기능2. 해당 영역을 띄운다.(div의 영향을 받지 않음)
+
+* <리스트(li)를 float로 가로(left)를 주고, 부모요소 ul에 배경색을 주기>
+- 이때 float로 블록요소인 li가 가로로 배열이 되는 이유?
+: 원래 li는 ul이라는 영역 안에서, 한줄을 다 차지하는 블록요소 였음.
+근데 float를 쓰면 li가 ul박스 안에서 띄어짐 (ul 영역 위로 띄워지는 형태)
+따라서 li가 본인의 크기를 인식을 못하고 콘텐츠 내용의 크기만큼만 너비를 갖게됨.
+=> inline-blobk을 쓰는 것과 비슷한 결과
+
+* <li 요소에 float를 적용하면 ul의 배경색이 적용되지 않는다.>
+- li가 ul에서 다 위로 떠서 ul영역 밖으로 벗어났기 때문에 ul의 영역이 제대로 인식되어지지 않음.
+
+* <부모요소인 ul에 overflow: hidden; 쓰면 ul의 배경색이 잡히는지?>
+- ul의 영역을 확보해주기 위해 overflow:hidden 써준 것인데, 이제 ul이 li의 영역을 인지하게 된다.
+	ul위에 떠있는 li까지 영역을 잡게 되서 배경색이 나오게 됨.
+	참고) ul에 overflow:hidden를 못쓰는 경우 높이를 주면 됨. (li이 없어진 공간만큼 강제로 높이를 확보해주게 됨.)
+
+      ul {
+        width: 500px;
+        background-color: skyblue;
+        overflow: hidden;        
+      }
+
+      li {
+        margin-right: 20px;
+        list-style: none;
+        float: left;     
+      }    
+    <ul>
+      <li>a</li>
+      <li>b</li>
+      <li>c</li>
+      <li>d</li>
+      <li>e</li>
+      <li>f</li>
+    </ul>    
 ---------------------------------------------------------------------------
 
 
