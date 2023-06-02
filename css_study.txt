@@ -97,6 +97,27 @@ background-size로 조절한 크기를 기준으로 이동한다.
 label:before - width, height 값을 적절히 조절해 위치를 잡은 아이콘의 이미지가 잘 보이게끔 한다.
 input[type=checkbox] + label - 이 값의 width 값은 비워놔야 한다. 그래야 커스텀 체크박스 옆 글씨가 옆으로 잘 써질 수 있다.
 ---------------------------------------------------------------------------
+셀렉트박스 커스텀
+1. 완전 커스텀	
+
+2. option은 사용하는 커스텀
+체크박스와 비슷하며 label을 이용한다. 
+div.select-box{width: 200px;position: relative;z-index: 1;display: inline-block;...}
+selectbox:before{background: url(...화살표 이미지 ); content: "";position: absolute;top: 50%;right: 5px;}
+label {position: absolute; top: 1px; left: 0;    z-index: -1;text-overflow: ellipsis; overflow: hidden; white-space: nowrap;}
+select { opacity: 0;...}
+
+구조는
+select-box
+	label
+	select
+		option
+
+먼저 select의 전체적인 프레임을 select-box를 이용해 잡는다. 또 relative 속성을 줘야한다.
+selectbox:before는 셀렉트의 화살표를 대신할 이미지를 넣어주면된다.
+label은 커스텀 select 안에 들어가는 내용이다.
+select는 실제 select이지만 가리기 위해서 opacity 0을 준다.
+---------------------------------------------------------------------------
 inline , block , inline block
 inline
 display 속성이 inline으로 지정된 엘리먼트는 전후 줄바꿈 없이 한 줄에 다른 엘리먼트들과 나란히 배치됩니다
