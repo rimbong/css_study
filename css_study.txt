@@ -99,6 +99,121 @@ input[type=checkbox] + label - 이 값의 width 값은 비워놔야 한다. 그�
 ---------------------------------------------------------------------------
 셀렉트박스 커스텀
 1. 완전 커스텀	
+div.option-select
+	input:checkbox
+	label
+	ul.select-list
+		li
+체크박스와 라벨을 묶어주어 클릭효과를 이용하였고 , option 대신 ul-li 태그를 사용한다.
+.option-select-wrap .option-select label {
+    display: block;
+    border: 1px solid #ddd;
+    font-size: 1.3rem;
+    height: 40px;
+    border-radius: 3px;
+    line-height: 38px;
+    padding: 0 15px;
+    font-weight: 500;
+    background: linear-gradient(top, #ffffff 0%, #f2f2f2 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);
+    background: -o-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);
+    background: -moz-linear-gradient(top, #ffffff 0%, #f2f2f2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #f2f2f2));
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2', gradientType=0);
+    transition: border-color .2s ease;
+}
+.option-select-wrap .option-select label:hover {
+    border-color: #ccc;
+}
+
+.option-select-wrap .option-select label i {
+    float: right;
+    line-height: 38px;
+}
+
+.option-select-wrap .option-select label i.fa-angle-up {
+    display: none;
+}
+
+.option-select-wrap .option-select .custom-check:checked + label i.fa-angle-up {
+    display: block;
+}
+
+.option-select-wrap .option-select .custom-check:checked + label i.fa-angle-down {
+    display: none;
+}
+.option-select-wrap .option-select .select-list {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 3px 0;
+    display: none;
+}
+
+.option-select-wrap .option-select .select-list li {
+    border-bottom: 1px solid #eee;
+}
+
+.option-select-wrap .option-select .select-list li:last-child {
+    border-bottom: none;
+}
+
+.option-select-wrap .option-select .select-list li a {
+    font-size: 1.2rem;
+    color: #555;
+    padding: 5px 15px;
+    display: block;
+    transition: background .2s ease, color 0.2s ease;
+}
+
+.option-select-wrap .option-select .select-list li a:hover {
+    background: #E4EDFF;
+    color: #222;
+}
+
+.option-select-wrap .option-select .select-list li a .type {
+    margin-right: 20px;
+}
+
+.option-select-wrap .option-select .select-list li a .price {
+    position: relative;
+}
+
+.option-select-wrap .option-select .select-list li a .price:before {
+    width: 1px;
+    height: 12px;
+    background: #e5e5e5;
+    left: -12px;
+    content: '';
+    position: absolute;
+    top: 50%;
+    margin-top: -5px;
+}
+
+.option-select-wrap .option-select .select-list li a .dchain-info {
+    margin-bottom: 2px;
+}
+
+.option-select-wrap .option-select .select-list li a .dchain-info .code {
+    font-size: 1rem;
+}
+
+.option-select-wrap .option-select .select-list li a .dchain-info .description {
+    font-size: 1.1rem;
+}
+
+.option-select-wrap .option-select .custom-check:checked ~ .select-list {
+    display: block;
+}
+
+.option-select-wrap .selected-option-wrap .selected-option {
+    margin-top: 15px;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #ddd;
+    background: #F8F8F8;
+    padding: 15px 20px;
+}
+
 
 2. option은 사용하는 커스텀
 체크박스와 비슷하며 label을 이용한다. 
@@ -108,7 +223,7 @@ label {position: absolute; top: 1px; left: 0;    z-index: -1;text-overflow: elli
 select { opacity: 0;...}
 
 구조는
-select-box
+div.select-box
 	label
 	select
 		option
