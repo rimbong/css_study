@@ -84,6 +84,8 @@ left: 50%;
 transform: translate(-50%, -50%);
 상위 요소는 relative로 선언 후 사용한다.
 
+3. text-align : center
+단순히 텍스트를 가운데 정렬 할 경우 사용한다.
 ---------------------------------------------------------------------------
 체크박스 커스텀
 input[type=checkbox] { display: none; }
