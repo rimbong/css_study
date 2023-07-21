@@ -85,7 +85,9 @@ transform: translate(-50%, -50%);
 상위 요소는 relative로 선언 후 사용한다.
 
 3. text-align : center
-단순히 텍스트를 가운데 정렬 할 경우 사용한다.
+단순히 텍스트를 가로-가운데 정렬 할 경우 사용한다.
+4. line-height : 해당 영역(div)의 높이;
+단순히 텍스트를 세로-가운데 정렬 할 경우 사용한다.
 ---------------------------------------------------------------------------
 체크박스 커스텀
 input[type=checkbox] { display: none; }
@@ -335,6 +337,12 @@ float ,overflow ,ul 각 속성에서 특이점
       <li>f</li>
     </ul>    
 ---------------------------------------------------------------------------
+background 전체 화면에 색깔입히기
+.back_ground {position: fixed;min-width: 100%;min-height: 100%;background-color: #005ca5;top: 0}
+.back-ground { min-width: 100vw; min-height: 100vh; background-color: #005ca5 }
+---------------------------------------------------------------------------
+
+
 
 
 
