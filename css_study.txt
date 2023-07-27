@@ -284,8 +284,8 @@ transition은 자동으로 발동되지 않는다. :hover와 같은 가상 클�
   스타일
 }
 1. 좁은 화면 스타일링
-	핸드폰처럼 좁은 화면에서만 특정 스타일을 적용하고 싶을 때는 화면의 최대 너비를 조건으로 하여 미디어 쿼리를 사용할 수 있습니다.
-	ex)
+	핸드폰처럼 좁은 화면에서만 특정 스타일을 적용하고 싶을 때는 화면의 최대 너비를 조건으로 하여 미디어 쿼리를 사용할 수 있습니다
+.	ex)
 	@media (max-width: 800px) {
 		800px 이하일 경우 스타일이 적용됨.
 	}
@@ -341,7 +341,14 @@ background 전체 화면에 색깔입히기
 .back_ground {position: fixed;min-width: 100%;min-height: 100%;background-color: #005ca5;top: 0}
 .back-ground { min-width: 100vw; min-height: 100vh; background-color: #005ca5 }
 ---------------------------------------------------------------------------
+자바스크립트 css 적용
+1) element.style.color = 'blue'; element.style.backgroundColor = 'yellow';
 
+2) element.style.cssText = 'color: blue; background-color: yellow';
+
+1번과 2번의 차이가 존재함 
+style.css.속성명 -  기존에 정의된 style에 새로운 속성을 추가합니다.
+style.cssText - 기존에 정의된 style을 지우고, cssText로 덮어 씁니다.
 
 
 
