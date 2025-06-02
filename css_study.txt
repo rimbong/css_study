@@ -88,6 +88,48 @@ transform: translate(-50%, -50%);
 단순히 텍스트를 가로-가운데 정렬 할 경우 사용한다.
 4. line-height : 해당 영역(div)의 높이;
 단순히 텍스트를 세로-가운데 정렬 할 경우 사용한다.
+
+5.flex 사용 
+체크박스와 span의 정렬을 맞출때 사용하며
+<input type="checkbox">와 <span>은 기본적으로 inline 또는 inline-block 요소로, vertical-align이 baseline으로 설정되어 텍스트가 체크박스 아래로 쳐짐.
+각 <div>에 display: flex; align-items: center;를 적용.
+display: flex: 체크박스와 <span>을 수평으로 배치.
+align-items: center: Flex 컨테이너 내에서 세로 중앙 정렬
+예:
+1)
+ <div style="display: flex; align-items: center;">
+    <input type="checkbox" >
+    <span style="margin-left: 5px;"></span>
+</div>
+2)
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 30px;
+    line-height: 30px;
+}
+.radio-group input[type="radio"] {
+    margin: 0;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+}
+.radio-group label {
+    margin: 0 5px 0 2px;
+    vertical-align: middle;
+    line-height: 30px;
+    cursor: pointer;
+}
+.radio-group input#inType2 {
+    margin-left: 20px; /* 첫 번째 쌍과 두 번째 쌍 간격 */
+}
+<div class="radio-group">
+    <input id="inType1" type="radio" name="inType" value="1" checked onclick="insertType();">
+    <label for="inType1"><fmt:message key="TE1599" /></label>
+    <input id="inType2" type="radio" name="inType" value="2" onclick="insertType();">
+    <label for="inType2"><fmt:message key="TE2604" /></label>
+</div>
 ---------------------------------------------------------------------------
 체크박스 커스텀
 input[type=checkbox] { display: none; }
